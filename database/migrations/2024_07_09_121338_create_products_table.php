@@ -19,7 +19,6 @@ return new class extends Migration
             $table->integer('price');
             $table->integer('quantity');
             $table->string('image');
-            // $table->bigInteger('category_id');
             $table->tinyInteger('status')->default(1);
             $table->timestamps();
         });

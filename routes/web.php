@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,5 @@ Route::get('categories/show/{id}', [CategoryController::class, 'show'])->name('s
 Route::get('categories/edit/{id}', [CategoryController::class, 'edit'])->name('edit');
 Route::put('categories/update/{id}', [CategoryController::class, 'update'])->name('update');
 Route::get('categories/destroy/{id}', [CategoryController::class, 'destroy'])->name('destroy');
+
+Route::resource('products', ProductController::class);

@@ -8,7 +8,7 @@
             <div class="alert alert-danger">{{ session('error') }}</div>
         @endif
     </div>
-    <form action="{{ route('store') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('store') }}" method="post" enctype="multipart/form-data" class="w-50">
         @csrf
         <div class="mb-3">
             <label for="formFile" class="form-label">Name</label>

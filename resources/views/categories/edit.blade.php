@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('header')
-    <h1>Categories</h1>
+    <h1>Categories Edit</h1>
 @endsection
 @section('content')
     <div class="notication">

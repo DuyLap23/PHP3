@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('header')
     <div class="d-flex justify-content-between mt-4">
-        <h1>Categories</h1>
+        <h1>Categories index</h1>
 
         <a href="{{ route('create') }}" class=""><button type="button" class="btn btn-success ">Add</button></a>
     </div>

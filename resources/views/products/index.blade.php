@@ -31,30 +31,35 @@
                 <tr>
                     <th scope="row">{{ $key + 1 }}</th>
                     <td>{{ $value->name }}</td>
-                    <td>  <img src=" {{ asset('storage/' . $value->image) }}" width="100" height="200" class="object-fit-cover img-fluid rounded-3"
-                      alt=""></td>
+                    <td> <img src=" {{ asset('storage/' . $value->image) }}" width="100" height="200"
+                            class="object-fit-cover img-fluid rounded-3" alt=""></td>
                     <td>{!! $value->status ? '<span class="badge bg-primary"> On</span>' : '<span class="badge bg-danger"> Off</span>' !!}</td>
-                    
+
                     <td>{{ $value->price }}</td>
                     <td>{{ $value->description }}</td>
                     <td>{{ $value->category->name }}</td>
-                    
+
                     <td>
-                       <div class="d-flex">
-                        <a href="{{ route('products.edit', $value->id) }}" class="nav-link text-dark"><i class="fa-solid fa-pen-to-square"></i></a>
-                        <a href="{{ route('products.show', $value->id) }}"class="nav-link text-dark"><i class="fa-regular fa-eye"></i></a>
-                        <form action="{{ route('products.destroy', $value->id) }}" method="post">
-                          @csrf
-                          @method('DELETE')
-                          <a onclick="return confirm('Are you sure?')" href="{{ route('products.destroy', $value->id) }}" class="nav-link text-dark"><i class="fa-solid fa-trash"></i></a>
-                        </form>
-                       </div>
+                        <div class="d-flex">
+                            <a href="{{ route('products.edit', $value->id) }}" class="nav-link text-dark"><i
+                                    class="fa-solid fa-pen-to-square"></i></a>
+                            <a href="{{ route('products.show', $value->id) }}"class="nav-link text-dark"><i
+                                    class="fa-regular fa-eye"></i></a>
+                            <form action="{{ route('products.destroy', $value->id) }}" method="post"
+                                onsubmit="return confirm('Are you sure?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-link text-dark p-0 m-0 align-baseline"><i
+                                        class="fa-solid fa-trash"></i></button>
+                            </form>
+
+                        </div>
                     </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
     <div class="paginator">
-      {{ $products->links() }}
-  </div>
+        {{ $products->links() }}
+    </div>
 @endsection
